@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>README</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <style type="text/css">@font-face {
+font-family: octicons-link;
+src: url(data:font/woff;charset=utf-8;base64,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) format('woff');
+}
+body {
+-webkit-text-size-adjust: 100%;
+text-size-adjust: 100%;
+color: #333;
+font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+font-size: 16px;
+line-height: 1.6;
+word-wrap: break-word;
+width: 728px;
+max-width: 99%;
+box-sizing: border-box;
+padding: 30px 30px 8rem 30px;
+margin-left: auto;
+margin-right: auto;
+}
+body a {
+background-color: transparent;
+}
+body a:active,
+body a:hover {
+outline: 0;
+}
+body strong {
+font-weight: bold;
+}
+body h1 {
+font-size: 2em;
+margin: 0.67em 0;
+}
+body img {
+border: 0;
+}
+body hr {
+box-sizing: content-box;
+height: 0;
+}
+body pre {
+overflow: auto;
+}
+body code,
+body kbd,
+body pre {
+font-family: monospace, monospace;
+font-size: 1em;
+}
+body input {
+color: inherit;
+font: inherit;
+margin: 0;
+}
+body html input[disabled] {
+cursor: default;
+}
+body input {
+line-height: normal;
+}
+body input[type="checkbox"] {
+box-sizing: border-box;
+padding: 0;
+}
+body table {
+border-collapse: collapse;
+border-spacing: 0;
+}
+body td,
+body th {
+padding: 0;
+}
+body * {
+box-sizing: border-box;
+}
+body input {
+font: 13px / 1.4 Helvetica, arial, nimbussansl, liberationsans, freesans, clean, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+body a {
+color: #4078c0;
+text-decoration: none;
+}
+body a:hover,
+body a:active {
+text-decoration: underline;
+}
+body hr {
+height: 0;
+margin: 15px 0;
+overflow: hidden;
+background: transparent;
+border: 0;
+border-bottom: 1px solid #ddd;
+}
+body hr:before {
+display: table;
+content: "";
+}
+body hr:after {
+display: table;
+clear: both;
+content: "";
+}
+body h1,
+body h2,
+body h3,
+body h4,
+body h5,
+body h6 {
+margin-top: 15px;
+margin-bottom: 15px;
+line-height: 1.1;
+}
+body h1 {
+font-size: 30px;
+}
+body h2 {
+font-size: 21px;
+}
+body h3 {
+font-size: 16px;
+}
+body h4 {
+font-size: 14px;
+}
+body h5 {
+font-size: 12px;
+}
+body h6 {
+font-size: 11px;
+}
+body blockquote {
+margin: 0;
+}
+body ul,
+body ol {
+padding: 0;
+margin-top: 0;
+margin-bottom: 0;
+}
+body ol ol,
+body ul ol {
+list-style-type: lower-roman;
+}
+body ul ul ol,
+body ul ol ol,
+body ol ul ol,
+body ol ol ol {
+list-style-type: lower-alpha;
+}
+body dd {
+margin-left: 0;
+}
+body code {
+font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+font-size: 12px;
+}
+body pre {
+margin-top: 0;
+margin-bottom: 0;
+font: 12px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+}
+body .select::-ms-expand {
+opacity: 0;
+}
+body .octicon {
+font: normal normal normal 16px/1 octicons-link;
+display: inline-block;
+text-decoration: none;
+text-rendering: auto;
+-webkit-font-smoothing: antialiased;
+-moz-osx-font-smoothing: grayscale;
+-webkit-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+user-select: none;
+}
+body .octicon-link:before {
+content: '\f05c';
+}
+body:before {
+display: table;
+content: "";
+}
+body:after {
+display: table;
+clear: both;
+content: "";
+}
+body>*:first-child {
+margin-top: 0 !important;
+}
+body>*:last-child {
+margin-bottom: 0 !important;
+}
+body a:not([href]) {
+color: inherit;
+text-decoration: none;
+}
+body .anchor {
+display: inline-block;
+padding-right: 2px;
+margin-left: -18px;
+}
+body .anchor:focus {
+outline: none;
+}
+body h1,
+body h2,
+body h3,
+body h4,
+body h5,
+body h6 {
+margin-top: 1em;
+margin-bottom: 16px;
+font-weight: bold;
+line-height: 1.4;
+}
+body h1 .octicon-link,
+body h2 .octicon-link,
+body h3 .octicon-link,
+body h4 .octicon-link,
+body h5 .octicon-link,
+body h6 .octicon-link {
+color: #000;
+vertical-align: middle;
+visibility: hidden;
+}
+body h1:hover .anchor,
+body h2:hover .anchor,
+body h3:hover .anchor,
+body h4:hover .anchor,
+body h5:hover .anchor,
+body h6:hover .anchor {
+text-decoration: none;
+}
+body h1:hover .anchor .octicon-link,
+body h2:hover .anchor .octicon-link,
+body h3:hover .anchor .octicon-link,
+body h4:hover .anchor .octicon-link,
+body h5:hover .anchor .octicon-link,
+body h6:hover .anchor .octicon-link {
+visibility: visible;
+}
+body h1 {
+padding-bottom: 0.3em;
+font-size: 1.75em;
+line-height: 1.2;
+}
+body h1 .anchor {
+line-height: 1;
+}
+body h2 {
+padding-bottom: 0.3em;
+font-size: 1.5em;
+line-height: 1.225;
+}
+body h2 .anchor {
+line-height: 1;
+}
+body h3 {
+font-size: 1.25em;
+line-height: 1.43;
+}
+body h3 .anchor {
+line-height: 1.2;
+}
+body h4 {
+font-size: 1em;
+}
+body h4 .anchor {
+line-height: 1.2;
+}
+body h5 {
+font-size: 1em;
+}
+body h5 .anchor {
+line-height: 1.1;
+}
+body h6 {
+font-size: 1em;
+color: #777;
+}
+body h6 .anchor {
+line-height: 1.1;
+}
+body p,
+body blockquote,
+body ul,
+body ol,
+body dl,
+body table,
+body pre {
+margin-top: 0;
+margin-bottom: 16px;
+}
+body hr {
+height: 4px;
+padding: 0;
+margin: 16px 0;
+background-color: #e7e7e7;
+border: 0 none;
+}
+body ul,
+body ol {
+padding-left: 2em;
+}
+body ul ul,
+body ul ol,
+body ol ol,
+body ol ul {
+margin-top: 0;
+margin-bottom: 0;
+}
+body li>p {
+margin-top: 16px;
+}
+body dl {
+padding: 0;
+}
+body dl dt {
+padding: 0;
+margin-top: 16px;
+font-size: 1em;
+font-style: italic;
+font-weight: bold;
+}
+body dl dd {
+padding: 0 16px;
+margin-bottom: 16px;
+}
+body blockquote {
+padding: 0 15px;
+color: #777;
+border-left: 4px solid #ddd;
+}
+body blockquote>:first-child {
+margin-top: 0;
+}
+body blockquote>:last-child {
+margin-bottom: 0;
+}
+body table {
+display: block;
+width: 100%;
+overflow: auto;
+word-break: normal;
+word-break: keep-all;
+}
+body table th {
+font-weight: bold;
+}
+body table th,
+body table td {
+padding: 6px 13px;
+border: 1px solid #ddd;
+}
+body table tr {
+background-color: #fff;
+border-top: 1px solid #ccc;
+}
+body table tr:nth-child(2n) {
+background-color: #f8f8f8;
+}
+body img {
+max-width: 100%;
+box-sizing: content-box;
+background-color: #fff;
+}
+body code {
+padding: 0;
+padding-top: 0;
+padding-bottom: 0;
+margin: 0;
+font-size: 85%;
+background-color: rgba(0,0,0,0.04);
+border-radius: 3px;
+}
+body code:before,
+body code:after {
+letter-spacing: -0.2em;
+content: "\00a0";
+}
+body pre>code {
+padding: 0;
+margin: 0;
+font-size: 100%;
+word-break: normal;
+white-space: pre;
+background: transparent;
+border: 0;
+}
+body .highlight {
+margin-bottom: 16px;
+}
+body .highlight pre,
+body pre {
+padding: 16px;
+overflow: auto;
+font-size: 85%;
+line-height: 1.45;
+background-color: #f7f7f7;
+border-radius: 3px;
+}
+.sourceCode {
+background-color: #f7f7f7;
+}
+body .highlight pre {
+margin-bottom: 0;
+word-break: normal;
+}
+body pre {
+word-wrap: normal;
+}
+body pre code {
+display: inline;
+max-width: initial;
+padding: 0;
+margin: 0;
+overflow: initial;
+line-height: inherit;
+word-wrap: normal;
+background-color: transparent;
+border: 0;
+}
+body pre code:before,
+body pre code:after {
+content: normal;
+}
+body kbd {
+display: inline-block;
+padding: 3px 5px;
+font-size: 11px;
+line-height: 10px;
+color: #555;
+vertical-align: middle;
+background-color: #fcfcfc;
+border: solid 1px #ccc;
+border-bottom-color: #bbb;
+border-radius: 3px;
+box-shadow: inset 0 -1px 0 #bbb;
+}
+body .pl-c {
+color: #969896;
+}
+body .pl-c1,
+body .pl-s .pl-v {
+color: #0086b3;
+}
+body .pl-e,
+body .pl-en {
+color: #795da3;
+}
+body .pl-s .pl-s1,
+body .pl-smi {
+color: #333;
+}
+body .pl-ent {
+color: #63a35c;
+}
+body .pl-k {
+color: #a71d5d;
+}
+body .pl-pds,
+body .pl-s,
+body .pl-s .pl-pse .pl-s1,
+body .pl-sr,
+body .pl-sr .pl-cce,
+body .pl-sr .pl-sra,
+body .pl-sr .pl-sre {
+color: #183691;
+}
+body .pl-v {
+color: #ed6a43;
+}
+body .pl-id {
+color: #b52a1d;
+}
+body .pl-ii {
+background-color: #b52a1d;
+color: #f8f8f8;
+}
+body .pl-sr .pl-cce {
+color: #63a35c;
+font-weight: bold;
+}
+body .pl-ml {
+color: #693a17;
+}
+body .pl-mh,
+body .pl-mh .pl-en,
+body .pl-ms {
+color: #1d3e81;
+font-weight: bold;
+}
+body .pl-mq {
+color: #008080;
+}
+body .pl-mi {
+color: #333;
+font-style: italic;
+}
+body .pl-mb {
+color: #333;
+font-weight: bold;
+}
+body .pl-md {
+background-color: #ffecec;
+color: #bd2c00;
+}
+body .pl-mi1 {
+background-color: #eaffea;
+color: #55a532;
+}
+body .pl-mdr {
+color: #795da3;
+font-weight: bold;
+}
+body .pl-mo {
+color: #1d3e81;
+}
+body kbd {
+display: inline-block;
+padding: 3px 5px;
+font: 11px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+line-height: 10px;
+color: #555;
+vertical-align: middle;
+background-color: #fcfcfc;
+border: solid 1px #ccc;
+border-bottom-color: #bbb;
+border-radius: 3px;
+box-shadow: inset 0 -1px 0 #bbb;
+}
+body .task-list-item {
+list-style-type: none;
+}
+body .task-list-item+.task-list-item {
+margin-top: 3px;
+}
+body .task-list-item input {
+margin: 0 0.35em 0.25em -1.6em;
+vertical-align: middle;
+}
+body :checked+.radio-label {
+z-index: 1;
+position: relative;
+border-color: #4078c0;
+}
+</style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<h1 id="mtrx5700-assignment-2">MTRX5700, Assignment 2</h1>
+<p>This folder contains the simulation framework and skeleton code for Assignment 2. Code that you need to directly edit is in the <code>assignment_2/scripts</code> folder.</p>
+<h3 id="setting-up-the-framework">Setting up the framework</h3>
+<p>This code was tested on Ubuntu 18.04 with ROS Melodic and Gazebo 9.0.0. Please try to match this configuration if you are using your personal computers.</p>
+<h4 id="pre-requisites-same-as-assignment-1.-we-have-also-provided-a-virtual-box-image-with-these-steps-already-done.">Pre-requisites (Same as Assignment 1. We have also provided a Virtual Box Image with these steps already done.)</h4>
+<p><em>Note</em>: These dependencies will also help in future assignments.</p>
+<ol type="1">
+<li>Install <a href="https://ubuntu.com/download/desktop">Ubuntu 18.04</a>.</li>
+<li>Install ROS Melodic following the instructions <a href="http://wiki.ros.org/melodic/Installation/Ubuntu">here</a>.</li>
+<li>Install the following dependencies</li>
+</ol>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">sudo</span> apt-get install socat libeigen3-dev libyaml-cpp-dev libboost-dev python-lxml libsoqt4-dev libcoin80-dev libqt4-dev libblas-dev liblapack-dev libqhull-dev python-pip python-catkin-tools python-pymodbus</span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1"></a><span class="fu">sudo</span> apt-get install ros-melodic-ros-control ros-melodic-ros-controllers ros-melodic-soem ros-melodic-socketcan-interface ros-melodic-moveit ros-melodic-moveit-commander ros-melodic-moveit-visual-tools ros-melodic-moveit-python ros-melodic-moveit-sim-controller ros-melodic-moveit-resources ros-melodic-actionlib ros-melodic-derived-object-msgs ros-melodic-gazebo-ros ros-melodic-gazebo-ros-control ros-melodic-eigen-conversions ros-melodic-actionlib ros-melodic-actionlib-msgs ros-melodic-control-msgs ros-melodic-controller-interface ros-melodic-controller-manager ros-melodic-dynamic-reconfigure ros-melodic-effort-controllers ros-melodic-force-torque-sensor-controller ros-melodic-gazebo-ros ros-melodic-gazebo-ros-control ros-melodic-geometry-msgs ros-melodic-hardware-interface ros-melodic-joint-state-controller ros-melodic-joint-state-publisher ros-melodic-joint-trajectory-controller ros-melodic-message-generation ros-melodic-message-runtime ros-melodic-moveit-core ros-melodic-moveit-fake-controller-manager ros-melodic-moveit-kinematics ros-melodic-moveit-planners-ompl ros-melodic-moveit-ros-manipulation ros-melodic-moveit-ros-move-group ros-melodic-moveit-ros-planning ros-melodic-moveit-ros-visualization ros-melodic-moveit-simple-controller-manager ros-melodic-pluginlib ros-melodic-realtime-tools ros-melodic-robot-state-publisher ros-melodic-roscpp ros-melodic-sensor-msgs ros-melodic-std-srvs ros-melodic-tf ros-melodic-tf-conversions ros-melodic-tf2-geometry-msgs ros-melodic-tf2-msgs ros-melodic-tf2-ros ros-melodic-trajectory-msgs ros-melodic-urdf ros-melodic-velocity-controllers ros-melodic-xacro</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1"></a><span class="ex">pip</span> install argparse rosdep matplotlib mpmath numpy scikit-learn scipy</span>
+<span id="cb3-2"><a href="#cb3-2"></a><span class="ex">pip</span> install torch==1.5.0+cpu torchvision==0.5.0+cpu -f https://download.pytorch.org/whl/torch_stable.html</span></code></pre></div>
+<ol start="4" type="1">
+<li>Initialize and update rosdep</li>
+</ol>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1"></a><span class="fu">sudo</span> rosdep init</span>
+<span id="cb4-2"><a href="#cb4-2"></a><span class="ex">rosdep</span> update</span></code></pre></div>
+<h4 id="setting-up-catkin-workspace">Setting up catkin workspace</h4>
+<p>The computers in MXLab have the above configuration. All the depedencies for this code to run have been installed. Please type the following commands in a terminal one after the other.<br />
+1. Source ROS commands</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1"></a><span class="bu">source</span> /opt/ros/melodic/setup.bash</span></code></pre></div>
+<ol start="2" type="1">
+<li>Create and initialize new catkin workspace. You may choose any name you like. Here we chose <strong><code>ur5espace</code></strong> and it is located in the home directory.<br />
+</li>
+</ol>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1"></a><span class="fu">mkdir</span> -p ur5espace/src <span class="kw">&amp;&amp;</span> <span class="bu">cd</span> ur5espace</span>
+<span id="cb6-2"><a href="#cb6-2"></a><span class="ex">catkin</span> init</span></code></pre></div>
+<ol start="3" type="1">
+<li>Download this folder, unzip and copy all the subfolders to <code>ur5espace/src</code></li>
+</ol>
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1"></a><span class="fu">cp</span> -r <span class="op">&lt;</span>location_of _downloaded _folder<span class="op">&gt;</span>/* src/</span></code></pre></div>
+<ol start="4" type="1">
+<li>Install dependencies using rosdep. Run the following from the folder <code>ur5espace</code></li>
+</ol>
+<div class="sourceCode" id="cb8"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1"></a><span class="ex">rosdep</span> update</span>
+<span id="cb8-2"><a href="#cb8-2"></a><span class="ex">rosdep</span> install --from-paths src --ignore-src -y</span></code></pre></div>
+<ol start="6" type="1">
+<li>Build the packages in the catkin workspace<br />
+</li>
+</ol>
+<div class="sourceCode" id="cb9"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1"></a><span class="ex">catkin</span> build</span></code></pre></div>
+<ol start="7" type="1">
+<li>Source the workspace</li>
+</ol>
+<div class="sourceCode" id="cb10"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1"></a><span class="bu">source</span> devel/setup.bash</span></code></pre></div>
+<ol start="8" type="1">
+<li>Grant executable permissions to the necessary scripts<br />
+</li>
+</ol>
+<div class="sourceCode" id="cb11"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1"></a><span class="fu">chmod</span> +x src/assignment_2/scripts/calib_demo.py</span></code></pre></div>
+<ol start="9" type="1">
+<li>If everything builds correctly, you are good to go. Else, first search for the issue on the internet and if you still cannot find a solution, post it on EdStem.</li>
+</ol>
+<h2 id="question-1">Question 1</h2>
+<ol type="1">
+<li>Terminal 1 - roscore</li>
+</ol>
+<div class="sourceCode" id="cb12"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1"></a><span class="ex">roscore</span></span></code></pre></div>
+<ol start="2" type="1">
+<li>Terminal 2 - Launch the simulated environment in gazebo</li>
+</ol>
+<div class="sourceCode" id="cb13"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1"></a><span class="bu">export</span> <span class="va">GAZEBO_MODEL_PATH=</span>~/ur5espace/src/assignment_2/models</span>
+<span id="cb13-2"><a href="#cb13-2"></a><span class="ex">roslaunch</span> assignment_2 ur5e_ass2_calib.launch</span></code></pre></div>
+<ol start="3" type="1">
+<li>Terminal 3 - Launch the MoveIt! Planner and Controller <strong>with sim:=true</strong></li>
+</ol>
+<div class="sourceCode" id="cb14"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1"></a><span class="ex">roslaunch</span> ur5_e_moveit_config ur5_e_moveit_planning_execution.launch sim:=true</span></code></pre></div>
+<ol start="4" type="1">
+<li>Terminal 4 - Launch RViz to visualize the planning scene <strong>with config:=true</strong></li>
+</ol>
+<div class="sourceCode" id="cb15"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1"></a><span class="ex">roslaunch</span> ur5_e_moveit_config moveit_rviz.launch config:=true</span></code></pre></div>
+<ol start="5" type="1">
+<li>Terminal 5 - Launch the demo to get some extra things in rviz</li>
+</ol>
+<div class="sourceCode" id="cb16"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1"></a><span class="ex">rosrun</span> assignment_2 calib_demo.py</span></code></pre></div>
+<p>In the Gazebo window, you should see a UR5e arm with a ChArUco board on the table. We will use this for calibration.</p>
+<p>In <code>RViz</code>, in the top menu, click <strong>Panels -&gt; Add New Panel -&gt; HandeyeCalibration</strong>. Set the parameters as follows.<br />
+<strong>Target</strong> - Target Type: HandEyeTarget/Charuco<br />
+- squares, X: 8<br />
+- squares, X: 10<br />
+- marker size (px): 70<br />
+- square size (px): 100<br />
+- margin size (px): 0<br />
+- marker border (bits): 1<br />
+- ArUco dictionary: DICT_5x5_250<br />
+- longest board size (m): 0.25<br />
+- measures marker size (m): 0.0175<br />
+- Image Topic: /realsense/color/image_raw<br />
+- CameraInfo Topic: /realsense/color/camera_info</p>
+<p><strong>Context</strong> - Sensor configuration: Eye-in-hand<br />
+- Sensor frame: /realsense_camera_link<br />
+- Object frame: /handeye_target &lt;- this will be blank initially until you move the arm to a pose where a target is in view.<br />
+- End-effector frame: tool0<br />
+- Robot base frame: base</p>
+<p><strong>Calibrate</strong> - Planning group: manipulator - AX=XB solver: Experiment with these.</p>
+<p>In rviz use the Moveit panel (<a href="http://docs.ros.org/en/melodic/api/moveit_tutorials/html/doc/quickstart_in_rviz/quickstart_in_rviz_tutorial.html">help link</a>) to move the arm to various poses (move the arrows, change orientation of the arm and press <em>plan and execute</em>). Then in the <em>Calibrate</em> tab of the moveit_calibration GUI press <em>Take sample</em> to save a sample. Repeat this a minimum of 5 times upto about 15 poses (experiment with this). Click on <em>Solve</em> to perform calibration.</p>
+<h2 id="question-2">Question 2</h2>
+<p>There is <strong>NO</strong> skeleton code provided for this question. You are free to write your own code in your preferred programming language and environment.</p>
+<p>Launch the 5 terminals as before but change the command in terminal 2 to the following.</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1"></a><span class="bu">export</span> <span class="va">GAZEBO_MODEL_PATH=</span>~/ur5espace/src/assignment_2/models</span>
+<span id="cb17-2"><a href="#cb17-2"></a><span class="ex">roslaunch</span> assignment_2 ur5e_ass2_icp.launch</span></code></pre></div>
+<p>This will load an environment with a few objects in it.</p>
+<p>The first step is to save pointclouds from two different poses. Choose the poses such that there is enough overlap for ICP to converge.</p>
+<p>One of the ways in which this can be done is to record short <strong>rosbags</strong> of say 5 seconds each from each of the poses and process them to save point clouds. The <strong>bag_to_pcd</strong> script from the <a href="http://wiki.ros.org/pcl_ros">pcl_ros</a> package can be used to do this. Alternatively, you can also use the same package to write a subscriber that will directly read and save a pointcloud from the simulation.</p>
+<p>The ros topic on which the pointclouds are published are <code>/realsense/depth/points</code> and its type is <code>sensor_msgs/PointCloud2</code>. You can visualize the pointcloud in <code>rviz</code> by adding a <strong>PointCloud2</strong> message type and setting its topic to the one mentioned.</p>
+<p><strong>Note</strong>: There are several file formats to store pointclouds and you are free to choose the one that suits you best. Some of the popular formats are .ply, .pcd, .txt.</p>
+<p>Once you have the point clouds you can run ICP using the framework of your choice. Some options are <a href="http://www.open3d.org/docs/release/tutorial/pipelines/icp_registration.html">Open3D</a>, <a href="https://pointclouds.org/documentation/tutorials/iterative_closest_point.html">PCL</a>, <a href="https://au.mathworks.com/help/vision/ref/pcregistericp.html">Matlab</a>.</p>
+<p>Chains of transformations can be visualized and queried by using the <strong>TF</strong> message type in <code>rviz</code> and querying the <code>tf</code> topic in ROS.</p>
+<h2 id="question-3">Question 3</h2>
+<p>Skeleton code with step by step instructions is provided in the file <code>assignment_2/scripts/traffic_signs_classifier.py</code>. This code uses the <strong>pytorch</strong> deep learning framework. You may choose to use another framework if you like and are comfortable with it. However, in the tutorial and lectures, we will only cover pytorch.</p>
+<p>The dataset is already split in to training, validation and test sets and provided as pickle (.pkl) files. Code to work with these files is provided. Additionally som extra data is also provided for you to experiment with. Please let us know if you have trouble opening these files.</p>
+<h2 id="question-4">Question 4</h2>
+<p>There is <strong>NO</strong> skeleton code provided for this question. You are required to write your own script in a programming language of your choice. The tasks to accomplish are 1. Play the rosbag <em>bag1</em> provided to extract or subscribe to color images from the turtlebot. Images are published on the topic <code>/raspicam_node/image/compressed</code>. Camera intrinsic parameters are available on the topic <code>/raspicam_node/camera_info</code>. 2. Use OpenCV or Matlab’s image processing toolbox or any other image processing library to preprocess these images to detect RED lines. 3. Use the detected RED lines to detect presence of traffic signs. 4. Preprocess the images with the traffic signs suitable to input them to the network you designed in the previous question. 5. Predict the label of the sign and display it as an overlay on the image.</p>
+<h2 id="question-5">Question 5</h2>
+<p>There is <strong>NO</strong> skeleton code provided for this question.</p>
+<p>Once you achieve sufficient accuracy of prediction in questions 3 and 4, you can proceed to controlling a robot based on the signs you detect. This can be done both in simulation or on a real robot. The main task is to publish velocity commands to to the ROS topic <code>cmd_vel</code> to control the robot.</p>
+<p>For running the demo in simulation, use the rosbag <em>bag1</em> provided and control a <strong>cool ROS Turtle</strong> in the <a href="http://wiki.ros.org/turtlesim">turtlesim</a> simulator.<br />
+For running the demo on a real robot, you will need to send commands to a turtlebot placed in a Duckietown environment.</p>
+<p><strong>If you are a remote student and want to run your code on a real robot, please ask us. We are happy to help you out. Real robots are more fun and challenging.</strong></p>
+<h3 id="extra-resources">Extra resources</h3>
+<p>Extracting pcd files from rosbags <a href="http://wiki.ros.org/pcl_ros">link</a></p>
+<p>ICP using PCL <a href="https://pointclouds.org/documentation/tutorials/iterative_closest_point.html">link</a></p>
+<p>Extracting images from rosbag <a href="http://wiki.ros.org/rosbag/Tutorials/Exporting%20image%20and%20video%20data">link</a></p>
+<p>Image thresholding <a href="https://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_imgproc/py_thresholding/py_thresholding.html">link</a></p>
+<p>Image cropping and resizing <a href="https://www.youtube.com/watch?v=GiVVCu7l34A">link</a></p>
+<p>Homography <a href="https://docs.opencv.org/master/d9/dab/tutorial_homography.html">link</a></p>
+</body>
+</html>

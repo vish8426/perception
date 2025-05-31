@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>assignment_2</name>
+  <version>1.0.0</version>
+  <description>Assignment_2: Hand-eye calibration.</description>
+
+  <maintainer email="tejaswi.digumarti@sydney.edu.au">Tejaswi Digumarti</maintainer>
+
+  <license>BSD</license>
+
+  <author email="tejaswi.digumarti@sydney.edu.au">Tejaswi Digumarti</author>
+
+  <!-- Dependencies. Can be catkin packages or system dependencies -->
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <depend>pluginlib</depend>
+  <depend>rospy</depend>  
+  <depend>moveit_core</depend>
+  <depend>moveit_ros_planning</depend>
+  <depend>moveit_ros_planning_interface</depend>
+  <depend>moveit_visual_tools</depend>
+  <depend>interactive_markers</depend>
+
+  <build_depend>tf2_ros</build_depend>
+  <build_depend>eigen</build_depend>
+  <build_depend>geometric_shapes</build_depend>
+  <build_depend>tf2_eigen</build_depend>
+  <build_depend>tf2_geometry_msgs</build_depend>
+
+  <!-- The export tag contains other, unspecified, tags -->
+  <export>
+    <!-- Other tools can request additional information be placed here -->
+
+  </export>
+</package>

@@ -1,0 +1,14 @@
+material charucoMat/Diffuse
+{
+    receive_shadows off
+    technique
+    {
+        pass
+        {
+            texture_unit
+            {
+                texture charuco_8x10_20cmx25cm_marker0.0175_sq0.25.png
+            }
+        }
+    }
+}

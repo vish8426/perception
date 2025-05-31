@@ -1,0 +1,14 @@
+material checkerMat/Diffuse
+{
+    receive_shadows off
+    technique
+    {
+        pass
+        {
+            texture_unit
+            {
+                texture checkerboard_40mm_7x9.png
+            }
+        }
+    }
+}
